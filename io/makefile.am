@@ -1,0 +1,3 @@
+noinst_LIBRARIES = libio.a
+libio_a_SOURCES = io.cpp io.h
+INCLUDES=-I$(top_srcdir)/include

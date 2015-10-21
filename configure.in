@@ -1,0 +1,52 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.59)
+AC_INIT([lrw],[0000],[mailyuanhao@gmail.com])
+AM_INIT_AUTOMAKE(lrw, 0000)
+AC_PROG_LIBTOOL
+AC_CONFIG_SRCDIR([config.h.in])
+AC_CONFIG_HEADER([config.h])
+
+AC_MSG_CHECKING(if --enable-beos option is specified)
+AC_ARG_ENABLE(beos, AS_HELP_STRING([--enable-beos], [under beos (default is no)]))
+	if test "$enable_beos" = "yes"; then
+		AC_DEFINE(__BEOS__, 1, [MMAP])
+	fi
+AC_MSG_RESULT($enable_beos-no)
+AC_MSG_CHECKING(if --enable-mmap option is specified)
+AC_ARG_ENABLE(mmap, AS_HELP_STRING([--enable-mmap], [Use mmap to read mem dev]))
+	if test "$enable_mmap" = "yes"; then
+		AC_DEFINE(USE_MMAP_C, 1, [MMAP])
+	fi
+AC_MSG_RESULT($enable_mmap-no)
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([string.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_C_CONST
+AC_TYPE_SIZE_T
+
+# Checks for library functions.
+AC_FUNC_MMAP
+AC_CHECK_FUNCS([getpagesize munmap strcasecmp])
+
+AC_CONFIG_FILES([cmd/include/makefile
+                 include/makefile
+                 io/makefile
+                 makefile
+                 plat/makefile])
+AC_OUTPUT

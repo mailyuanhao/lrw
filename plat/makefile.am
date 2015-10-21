@@ -1,0 +1,10 @@
+bin_PROGRAMS = lrw
+lrw_SOURCES = cmdimp.cpp cmdmap.cpp cmdwrapper.cpp command.cpp \
+	      main.cpp util.cpp $(top_srcdir)/cmd/src/cmd_hello.cpp\
+	     $(top_srcdir)/cmd/src/cmd_help.cpp \
+	     $(top_srcdir)/cmd/src/cmd_ioport.cpp\
+	    $(top_srcdir)/cmd/src/cmd_pci.cpp\
+	    $(top_srcdir)/cmd/src/cmd_mem.cpp
+lrw_LDADD = $(top_srcdir)/io/libio.a
+INCLUDES=-I$(top_srcdir)/include -I$(top_srcdir)/cmd/include
+

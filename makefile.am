@@ -1,0 +1,2 @@
+EXTRA_DIST= ./doc/readme_zh
+SUBDIRS = cmd/include io plat include

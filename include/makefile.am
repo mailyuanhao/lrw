@@ -1,0 +1,4 @@
+noinst_HEADERS = cmdimp.h cmdmap.h cmdwrapper.h \
+		command.h datatype.h single.h util.h\
+		config_lrw.h
+INCLUDES=-I$(top_srcdir)/include -I$(top_srcdir)

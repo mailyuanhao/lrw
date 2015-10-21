@@ -1,0 +1,24 @@
+實現linux下基本IO操作的小工具.
+
+編譯:
+	./configure
+	make
+	make install-strip(由于模板使用泛滥，造成代码膨胀。故推荐用strip install)
+
+使用:
+	直接運行編譯后生成的rw文件既可.
+	詳細命令可在運行后輸入help獲取
+	命令不區分大小寫。即RPCI32 0 0 0 0 和rpci32 0 0 0 0效果相同
+
+bugs:
+	...
+
+添加新命令:
+	可參考cmd目錄下的cmd_hello.h和cmd_hello.cpp.這兩個文件實現了hello命令
+
+更改歷史:
+22:55 2008-10-17
+	更改目录结构
+	使用gnu auto tool自动生成makefile
+8:10 2008-7-1
+	完成基本功能
